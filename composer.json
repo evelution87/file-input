@@ -16,7 +16,9 @@
         }
     ],
     "require": {
-        "php": "^7.4|^8.0",
+        "php": "^8.0",
+        "ext-json": "*",
+        "evelution87/heroicons": "^2.0",
         "illuminate/support": "^8.0"
     },
     "require-dev": {

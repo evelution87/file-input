@@ -1,0 +1,7 @@
+/.github/
+/.idea/
+/composer.lock
+/mix-manifest.json
+/package-lock.json
+/vendor/
+/node_modules/
