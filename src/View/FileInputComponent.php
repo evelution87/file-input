@@ -47,7 +47,7 @@ class FileInputComponent extends Component
 	
 	public function render()
 	{
-		return view( 'file-input::table' );
+		return view( 'file-input::file-input' );
 	}
 	
 }
