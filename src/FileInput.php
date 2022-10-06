@@ -1,6 +1,6 @@
 <?php
 
-namespace Evelution87\FileInput;
+namespace Evelution\FileInput;
 
 class FileInput
 {

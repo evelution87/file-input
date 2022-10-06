@@ -9,7 +9,7 @@
     "prod": "npm run production",
     "production": "mix --production",
     "tw": "npx tailwindcss -i ./resources/css/fileinput.css -o ./assets/css/fileinput.css -w",
-    "tw-prod": "npx tailwindcss -i ./resources/css/fileinput.css -o ./assets/css/fileinput.min.css -w --minify"
+    "tw-prod": "npx tailwindcss -i ./resources/css/fileinput.css -o ./assets/css/fileinput.css -w --minify"
   },
   "devDependencies": {
     "alpinejs": "^3.10.3",

@@ -27,12 +27,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Evelution87\\FileInput\\": "src"
+            "Evelution\\FileInput\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Evelution87\\FileInput\\Tests\\": "tests"
+            "Evelution\\FileInput\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -46,10 +46,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Evelution87\\FileInput\\FileInputServiceProvider"
+                "Evelution\\FileInput\\FileInputServiceProvider"
             ],
             "aliases": {
-                "FileInput": "Evelution87\\FileInput\\FileInputFacade"
+                "FileInput": "Evelution\\FileInput\\FileInputFacade"
             }
         }
     }

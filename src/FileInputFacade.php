@@ -1,11 +1,11 @@
 <?php
 
-namespace Evelution87\FileInput;
+namespace Evelution\FileInput;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \Evelution87\FileInput\Skeleton\SkeletonClass
+ * @see \Evelution\FileInput\Skeleton\SkeletonClass
  */
 class FileInputFacade extends Facade
 {
