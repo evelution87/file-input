@@ -29,7 +29,7 @@ class FileInputServiceProvider extends ServiceProvider
 			
 		} else {
 			
-			Blade::component( 'file-input', FileInputComponent::class );
+			Blade::component( 'input', FileInputComponent::class );
 			
 		}
 	}
