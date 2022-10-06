@@ -19,10 +19,9 @@
         "php": "^8.0",
         "ext-json": "*",
         "evelution87/heroicons": "^2.0",
-        "illuminate/support": "^8.0"
+        "laravel/framework": "^9.0"
     },
     "require-dev": {
-        "orchestra/testbench": "^6.0",
         "phpunit/phpunit": "^9.0"
     },
     "autoload": {
