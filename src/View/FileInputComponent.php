@@ -29,7 +29,7 @@ class FileInputComponent extends Component
 		return json_encode( $this->data );
 	}
 	
-	public function __construct( $route,
+	public function __construct( $route = '/',
 	                             $layout = 'list',
 	                             $auto = false,
 	                             $multiple = false,
