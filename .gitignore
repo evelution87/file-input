@@ -1,5 +1,7 @@
 /.github/
 /.idea/
+/.github
+/.idea
 /composer.lock
 /mix-manifest.json
 /package-lock.json
