@@ -52,7 +52,7 @@ export default function ( data = {} ) {
 						uuids.push( file.uuid );
 					}
 				} );
-				this.item[this.collection] = this.multiple ? uuids : uuids[0];
+				this.item[this.meta.collection || this.id] = this.multiple ? uuids : uuids[0];
 			}
 		},
 		
@@ -173,6 +173,11 @@ export default function ( data = {} ) {
 		
 		deleteFile( index ) {
 			
+			// TODO CRAIG Deleting didn't work as expected
+			/**
+			 * Added 3 docx, then 2 jpg. Deleted #4 and it deleted #5 as well. Deleted #2 and it deleted #2 and #3 and restored #5.
+			 */
+			
 			/*if ( 'undefined' !== typeof this.files[index].uuid ) {
 				let deleteList = this.deleteFiles.split( '|' );
 				deleteList.push( this.files[index].uuid );
@@ -207,13 +212,19 @@ export default function ( data = {} ) {
 		},
 		
 		uploadFile( file ) {
+			
+			// TODO CRAIG Add error handling
+			// E.g. remove progress bar, show error message
+			// Maybe include specific handling (e.g. auto-delete) if error is unsupported filetype
+			
 			if ( file.progress ) {
 				return false;
 			}
 			let formData = new FormData();
-			formData.append( 'model', this.model );
-			formData.append( 'collection', this.collection );
 			formData.append( 'file', file.file );
+			formData.append( 'id', this.id );
+			formData.append( 'name', this.name );
+			formData.append( 'meta', JSON.stringify( this.meta ) );
 			
 			axios.post( this.route + '/upload-file', formData, {
 					onUploadProgress: ( progressEvent ) => file.progress = Math.min( progressEvent.loaded, file.size )
