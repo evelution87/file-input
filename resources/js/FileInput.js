@@ -1,10 +1,13 @@
 export default function ( data = {} ) {
 	return {
 		
+		// TODO CRAIG Add ability to function as basic input[type="file"] field and upload with form submission if data.route is not defined
+		// In basic mode it should use a native FileList and fit to whatever restrictions that has (can't edit contents or delete individual files?)
+		
 		id: data.id,
 		route: data.route || '',
-		multiple: data.multiple || false,
-		auto: data.auto || false,
+		multiple: (data.multiple || false) !== 'false',
+		auto: (data.auto || false) !== 'false',
 		layout: data.layout || 'list',
 		meta: data.meta || {},
 		name: data.name || null,
@@ -170,7 +173,7 @@ export default function ( data = {} ) {
 				reader.readAsDataURL( file.file );
 				reader.onload = () => file.preview_url = reader.result;
 			} else {
-				console.log( file.name, 'cannot be previewed' );
+				//console.log( file.name, 'cannot be previewed' );
 			}
 		},
 		
@@ -218,7 +221,7 @@ export default function ( data = {} ) {
 			
 			// TODO CRAIG Add error handling
 			// E.g. remove progress bar, show error message
-			// Maybe include specific handling (e.g. auto-delete) if error is unsupported filetype
+			// Maybe include specific handling (e.g. auto-delete) if error is an unsupported filetype
 			
 			if ( file.progress ) {
 				return false;
