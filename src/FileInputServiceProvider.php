@@ -20,7 +20,7 @@ class FileInputServiceProvider extends ServiceProvider
 			
 			// Publishing assets.
 			$this->publishes( [
-				__DIR__ . '/../resources/assets' => public_path( 'vendor/file-input' ),
+				__DIR__ . '/../assets' => public_path( 'vendor/file-input' ),
 			], 'assets' );
 			
 			// Publishing resources.
