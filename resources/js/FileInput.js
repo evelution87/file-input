@@ -1,3 +1,10 @@
+function boolify( value ) {
+	if ( value === 'true' || value === 'false' ) {
+		return value === 'true';
+	}
+	return value;
+}
+
 export default function ( data = {} ) {
 	return {
 		
@@ -6,13 +13,13 @@ export default function ( data = {} ) {
 		
 		id: data.id,
 		route: data.route || '',
-		multiple: (data.multiple || false) !== 'false',
-		auto: (data.auto || false) !== 'false',
+		multiple: boolify( data.multiple || false ),
+		auto: boolify( data.auto || false ),
 		layout: data.layout || 'list',
 		meta: data.meta || {},
 		name: data.name || null,
-		maxFiles: data.max || false,
-		allowedTypes: data.types || false,
+		maxFiles: boolify(data.max || false),
+		allowedTypes: boolify(data.types || false),
 		
 		files: [],
 		isDragging: false,
@@ -45,13 +52,6 @@ export default function ( data = {} ) {
 				}
 				// TODO Add event to trigger uploads when parent form is submitted (might need to bind to form in init() to preventDefault)
 			}
-		},
-		
-		boolify( value ) {
-			if ( value === 'true' || value === 'false' ) {
-				return value === 'true';
-			}
-			return value;
 		},
 		
 		setParentData() {
