@@ -1,5 +1,5 @@
 <script>
-	let {{ $data_id }} = {!! $tableData() !!};
+	let {{ $data_id }} = {!! $inputData() !!};
 </script>
 
 <div x-data="FileInput({{ $data_id }})" x-bind="bind.fileInput" :class="isDragging ? 'border-emerald-600 bg-emerald-50 border-dashed' : 'border-gray-300 bg-neutral-50'"
@@ -49,7 +49,7 @@
 	
 	<div x-show="!maxFiles || files.length < maxFiles" class="p-4">
 		Drop <span x-text="multiple ? 'files' : 'a file'"></span> or
-		<label class="underline cursor-pointer"><input id="{{ $id }}" type="file" x-on:change="handleDrop" class="hidden" :multiple="multiple"/>click here</label> to browse.
+		<label class="underline cursor-pointer"><input :id="id" type="file" x-on:change="handleDrop" class="hidden" :multiple="multiple"/>click here</label> to browse.
 	</div>
 	
 	<template x-if="!auto">

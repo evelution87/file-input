@@ -7,7 +7,8 @@ use Illuminate\View\Component;
 class FileInputComponent extends Component
 {
 	
-	public $data;
+	public $inputData;
+	public $data_id;
 	
 	/**
 	 * let {{ $data_id = uniqid('data_') }} = {
@@ -24,12 +25,12 @@ class FileInputComponent extends Component
 	 * };
 	 */
 	
-	public function data()
+	public function inputData()
 	{
-		return json_encode( $this->data );
+		return json_encode( $this->inputData );
 	}
 	
-	public function __construct( $route = '/',
+	public function __construct( $route = '',
 	                             $layout = 'list',
 	                             $auto = false,
 	                             $multiple = false,
@@ -39,10 +40,10 @@ class FileInputComponent extends Component
 	                             $files = [],
 	                             $meta = [] )
 	{
-		$data_id = uniqid( 'data_' );
+		$id = $this->data_id = uniqid( 'data_' );
 		//$app_url            = config( 'app.url', '' );
 		
-		$this->data = compact( 'data_id', 'name', 'route', 'layout', 'auto', 'multiple', 'max', 'types', 'files', 'meta' );
+		$this->inputData = compact( 'id', 'name', 'route', 'layout', 'auto', 'multiple', 'max', 'types', 'files', 'meta' );
 	}
 	
 	public function render()

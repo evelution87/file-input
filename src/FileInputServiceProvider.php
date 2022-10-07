@@ -2,6 +2,7 @@
 
 namespace Evelution\FileInput;
 
+use Evelution\FileInput\Console\Commands\Publish;
 use Evelution\FileInput\View\FileInputComponent;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
@@ -26,6 +27,10 @@ class FileInputServiceProvider extends ServiceProvider
 			$this->publishes( [
 				__DIR__ . '/../resources/js/FileInput.js' => resource_path( 'js/vendor/file-input/FileInput.js' ),
 			], 'resources' );
+			
+			$this->commands( [
+				Publish::class,
+			] );
 			
 		} else {
 			

@@ -1,7 +1,8 @@
 export default function ( data = {} ) {
 	return {
 		
-		route: data.route || '/ajax',
+		id: data.id,
+		route: data.route || '',
 		multiple: data.multiple || false,
 		auto: data.auto || false,
 		layout: data.layout || 'list',
@@ -132,6 +133,7 @@ export default function ( data = {} ) {
 			
 			file = {
 				name: file.name,
+				file_name: file.name,
 				lastModified: file.lastModified,
 				size: file.size,
 				preview_url: '',
