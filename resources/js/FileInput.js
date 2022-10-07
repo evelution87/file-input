@@ -221,10 +221,10 @@ export default function ( data = {} ) {
 				return false;
 			}
 			let formData = new FormData();
-			formData.append( 'file', file.file );
 			formData.append( 'id', this.id );
 			formData.append( 'name', this.name );
 			formData.append( 'meta', JSON.stringify( this.meta ) );
+			formData.append( 'file', file.file );
 			
 			axios.post( this.route + '/upload-file', formData, {
 					onUploadProgress: ( progressEvent ) => file.progress = Math.min( progressEvent.loaded, file.size )
