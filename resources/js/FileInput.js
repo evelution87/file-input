@@ -77,6 +77,9 @@ export default function ( data = {} ) {
 			if ( !this.multiple ) {
 				this.maxFiles = 1;
 			}
+			if ( 'string' === typeof this.meta ) {
+				this.meta = JSON.parse( this.meta );
+			}
 			if ( false === this.allowedTypes ) {
 				// Do nothing
 			} else if ( 'undefined' !== typeof this.fileTypeGroups[this.allowedTypes] ) {
